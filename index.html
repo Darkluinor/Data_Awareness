@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LockMyInfo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script>
+  
+  const firebaseConfig = {
+      apiKey: "AIzaSyD6adfA5mwGRdjwTnJ00eRS6LETOHbHtYk",
+  authDomain: "my-project-76-930a4.firebaseapp.com",
+  projectId: "my-project-76-930a4",
+  storageBucket: "my-project-76-930a4.firebasestorage.app",
+  messagingSenderId: "303555068007",
+  appId: "1:303555068007:web:83be776a5095852a0cd4c2",
+  measurementId: "G-4EH82XH11L"
+  };
+
+ 
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  
+    window.showSection = function(section) {
+      const sections = document.querySelectorAll('.main-section');
+      sections.forEach(sec => sec.style.display = 'none');
+      const target = document.getElementById(section + '-section');
+      if (target) target.style.display = 'block';
+    };
+
+</script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        li a{
+            color: white; font-size: px; font-weight: bold; margin-right: 0%;
+        }
+    </style>
+    <style>
+      
+    .card { background:#fff; box-shadow: 0 2px 8px #e0e0e0; border-radius:8px; padding:1.3rem; margin-bottom:1.2rem;}
+    .card h3 { margin-top:0; }
+    .theme h2 { color: #1726cf; margin-top:0;}
+    
+    </style>
+
+  <nav id="mainNav">
+  <h2><div class="logo">LockMyInfo</div></h2>
+  <ul>
+    <h1><li><a href="#" onclick="showSection('home')">Home</a></li></h1>
+    <h1><li><a href="#" onclick="showSection('about')">About </a></li></h1>
+    <h1><li><a href="#" onclick="showSection('help')">Help</a></li></h1>
+     <h1><li><a href="#" onclick="showSection('login')">login</a></li></h1>
+   
+  </ul>
+</nav>
+
+  <section id="home-section" class="main-section">
+     
+  <div class="card">
+     
+   <h1> <p style="font-family: 'Courier New', Courier, monospace;">Keep your personal data safe</p></h1>
+     <img src="https://www.infosecinstitute.com/globalassets/wysiwyg-images-folder/10-ways-to-protect-your-personal-data-tip-sheet-2022-thumbnailv2-360x290.png" 
+       alt="Keep Your Personal Data Safe" 
+       style="max-width:100%; height:auto; border-radius:8px; margin:1rem 0;">
+   <p style="text-align: left;">
+    Personal data is valuable. It includes information like your name, email address, phone number, passwords, financial details, and even your location. If this data falls into the wrong hands, it can be misused for identity theft, scams, or unauthorized surveillance.
+   <h3 style="text-align: left;">Here’s how you can keep it safe:</h3>
+  <p><li><strong>Use strong, unique passwords:</strong> Don’t reuse the same password across websites. Use a password manager if needed.</li></p>
+<p><li><strong>Enable two-factor authentication (2FA):</strong> Adds an extra layer of security to your accounts.</li></p>
+<p> <li><strong>Don’t overshare on social media:</strong> Avoid posting personal details like your full birthdate, address, or school/workplace info.</li></p>
+<p><li><strong>Be cautious with public Wi-Fi:</strong> Avoid entering sensitive information when connected to open networks.</li></p>
+<p><li><strong>Check app permissions:</strong> Don’t allow unnecessary access to your contacts, camera, or location.</li></p>
+<p><li><strong>Keep your software updated:</strong> Security updates fix known bugs hackers can exploit.</li></p>
+<p><li><strong>Be alert to phishing emails:</strong> Don’t click unknown links or download suspicious attachments.</li></p>
+
+  <p>
+    Taking simple steps can greatly reduce your risk and help you stay in control of your personal information. Data privacy is not just a tech issue — it's a life skill in the digital age.
+  </p>
+   </div>
+   </div>
+  
+    <div class="card">
+     
+   <h1> <p style="font-family: 'Courier New', Courier, monospace;">What is data privacy ?</p></h1>
+   
+   <p>Data privacy means protecting personal information and ensuring that individuals have control over how their data is collected, used, and shared. It is about keeping sensitive details such as names, addresses, phone numbers, financial information, and online activities safe from misuse or unauthorized access. In today’s digital world, where people use websites, apps, and social media every day, data privacy has become very important.
+</p>
+<p><li>Protecting personal information (name, phone, email, address, ID numbers, etc.)</li></p>
+<p><li>Controlling access – making sure only authorized people/organizations can see or use your data</li></p>
+<p><li>Transparency – knowing how, why, and where your data is being used</li></p>
+<p><li>Consent – companies must ask permission before collecting or sharing your information</li></p>
+<p><li>Data security – keeping information safe from hackers, leaks, or misuse</li></p>
+<p><li>Right to delete or correct data – users should have the option to update or remove their information</li></p>
+   </div>
+   </div>
+  
+   <div class="card">
+    
+<h1> <p style="font-family: 'Courier New', Courier, monospace;">Why is Data Privacy Important?</p></h1>
+<p>1. Protects people from identity theft and fraud</p>
+<p>2. Builds trust between users and companies</p>
+<p>3. Helps you keep control of your digital life</p>
+<p>4. Many countries have laws (like GDPR in Europe, PDP Bill in India) to protect data privacy</p>
+   </div>
+   
+
+   <div class="card">
+<h1><p style="font-family: 'Courier New', Courier, monospace;">Examples of Data Privacy in Daily Life:</p></h1>
+<p><li>When you share photos on social media, only people you allow should see them.
+</li></p>
+<p><li>Your bank details should only be seen by you and your bank.</li></p>
+<p><li>Websites should ask permission before collecting cookies or tracking your activity.</li></p>
+   </div>
+   
+
+<div class="card">
+  <h2 style="color: #0b1d51;">Highlights</h2>
+
+ 
+  <div class="highlight-item" style="display: flex; align-items: flex-start; margin-top: 20px;">
+    <div style="width: 40px; height: 40px; background: #f0f0f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.xO6mp8MIj1PSgB6TyISQNAAAAA?pid=Api&P=0&h=220" alt="Privacy Icon" width="40" height="40">
+    </div>
+    <div>
+      <h3 style="margin: 0;">Manage Your Privacy Settings</h3>
+      <p style="margin: 6px 0 10px;">Want to view or change your privacy/security settings, but don’t know where to find them? Use these direct links to update your privacy settings on popular devices and online services.</p>
+      <a href="privacy.html"  style="display: inline-block; padding: 8px 16px; background-color: #6a1b9a; color: #fff; border-radius: 20px; text-decoration: none;">Learn More</a>
+    </div>
+  </div>
+
+  
+  <div class="highlight-item" style="display: flex; align-items: flex-start; margin-top: 30px;">
+    <div style="width: 40px; height: 40px; background: #f0f0f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.7brgm5QsB1_1evbf7eFczgHaHa?pid=Api&P=0&h=220" alt="Data Icon" width="40" height="40">
+    </div>
+    <div>
+      <h3 style="margin: 0;">Take Control of Your Data</h3>
+      <p style="margin: 6px 0 10px;">Follow these steps to better manage your personal information and make informed decisions about who receives your data.</p>
+      <a href="data.html"  style="display: inline-block; padding: 8px 16px; background-color: #6a1b9a; color: #fff; border-radius: 20px; text-decoration: none;">Learn More</a>
+    </div>
+  </div>
+
+
+  <div class="highlight-item" style="display: flex; align-items: flex-start; margin-top: 30px;">
+    <div style="width: 30px; height: 30px; background: #f0f0f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.KCIwcnzMUceFXb0FgyWinAHaHa?pid=Api&P=0&h=220" alt="Respect Privacy Icon" width="30" height="30">
+    </div>
+    <div>
+      <h3 style="margin: 0;">Respect Privacy</h3>
+      <p style="margin: 6px 0 10px;">Respecting consumers’ privacy is a smart strategy for inspiring trust and enhancing reputation and growth in your business.</p>
+      <a href="respect.html"  style="display: inline-block; padding: 8px 16px; background-color: #6a1b9a; color: #fff; border-radius: 20px; text-decoration: none;">Learn More</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+  </section>
+  <section id="about-section" class="main-section" style="display:none;">
+     <div class="card">
+    <h1>About Us</h1>
+    <p>
+    LockMyInfo is a platform dedicated to spreading awareness about the importance of data privacy in the digital age.
+Our mission is to help individuals and organizations understand how personal information is collected, used, and shared — and how to protect it.<br>
+<ul>
+<b>Through our Data Privacy Awareness Survey, we aim to:</b></ul>
+
+<li>Educate people about online risks and safe practices.</li>
+
+<li>Understand how much users know about data protection.</li>
+
+<li>Provide insights and tips for improving digital security.</li></p>
+
+<p><ul>
+We believe that everyone has the right to control their personal information and stay safe from cyber threats, identity theft, and misuse of data.
+At LockMyInfo, we are committed to building a more privacy-conscious digital community.</ul><br>
+      Contact us at info@lockmyinfo.com for inquiries.
+    </p>
+     </div>
+  </section>
+  <section id="help-section" class="main-section" style="display:none;">
+  <div class="card">
+    <h1>Help & FAQs</h1>
+    
+    <h3>📌 What is this survey about?</h3>
+    <p>
+      Our Data Privacy Awareness Survey helps us understand how much people know about protecting their personal data online. It’s designed to raise awareness and encourage safer online behavior.
+    </p>
+
+    <h3>🧠 Who should take this survey?</h3>
+    <p>
+      Anyone who uses the internet — students, professionals, parents, or business owners. Everyone’s input matters.
+    </p>
+
+    <h3>⏱️ How long does it take?</h3>
+    <p>
+      The survey takes about 2–3 minutes to complete. It's short, simple, and completely anonymous.
+    </p>
+
+    <h3>🔐 Is my information safe?</h3>
+    <p>
+      Yes. We don’t collect any personal identifiers. The data is used only for educational and research purposes to promote data privacy awareness.
+    </p>
+
+    <h3>📥 I can’t see the survey after logging in. What should I do?</h3>
+    
+      <p><li>Make sure you're connected to the internet.</li></p>
+      <p><li>Refresh the page after login.</li></p>
+      <p><li>If the problem continues, try using a different browser or device.</li></p>
+
+    <p><h2> Fallen Victim to Cybercrime? Here's What to Do Next</h2></p>
+    <h3>Q1: What should I do immediately after realizing I’ve been scammed online?</h3>
+    <p>Act fast. Immediately disconnect from the internet (if needed), change all compromised passwords, and report the incident to your bank if financial information is involved. Take screenshots of suspicious messages or transactions for evidence.</p>
+
+    <h3>Q2: Who should I report cybercrime to?</h3>
+    <p>Report to:</p>
+    <p><li>Your local police or cybercrime cell</li></p>
+    <p><li>National cybercrime reporting portals (e.g., cybercrime.gov.in in India)</li></p>
+    <p><li>Your bank or financial service provider</li></p>
+    <p><li>The platform or app where the scam occurred</li></p>
+
+    <h3>Q3: Can I recover stolen money or data?</h3>
+    <p>It depends. If reported quickly, banks or payment services may be able to reverse transactions. However, data or money recovered is not guaranteed, which is why early action is critical.</p>
+
+    <h3>Q4: Should I delete all my accounts if I’ve been hacked?</h3>
+    <p>Not necessarily. First, change passwords immediately. Enable two-factor authentication (2FA) on all accounts. Monitor for suspicious activity. Delete only if you cannot secure the account or if it continues to be misused.</p>
+    
+    <h3>📧 Need more help?</h3>
+
+    <p>
+      If you’re facing any technical issues or have questions about the survey, feel free to contact us at <b>info@lockmyinfo.com</b>
+    </p>
+  </div>
+</section>
+
+ 
+ 
+
+ <section id="login-section" class="main-section" style="display:none;">
+  <div class="card" style="max-width:400px; margin:auto; padding:20px; text-align:center;">
+
+    
+    <h2 id="formTitle">Sign Up Here</h2>
+
+    
+    <form id="signupForm">
+      <input type="text" id="signupUsername" placeholder="Enter Your Email" required style="width:90%; padding:10px; margin:10px 0;"><br>
+      <input type="password" id="signupPassword" placeholder="Enter Your Password" required style="width:90%; padding:10px; margin:10px 0;"><br>
+      <button type="submit" style="background:orange; color:white; padding:10px 20px; border:none; border-radius:6px; font-size:16px; cursor:pointer;">Sign Up</button>
+    </form>
+
+    
+    <form id="loginForm" style="display:none;">
+      <input type="text" id="loginUsername" placeholder="Enter Email" required style="width:90%; padding:10px; margin:10px 0;align-items: center;"><br>
+      <input type="password" id="loginPassword" placeholder="Enter Password" required style="width:90%; padding:10px; margin:10px 0;align-items: center;"><br>
+      <button type="submit" style="background:orange; color:white; padding:10px 20px; border:none; border-radius:6px; font-size:16px; cursor:pointer;">Login</button>
+    </form>
+
+    
+    <p id="switchText" style="margin-top:15px;">Already have an account? <a href="#" id="switchToLogin" style="color:orange;">Login here</a></p>
+  </div>
+
+ 
+  <div id="surveyForm" style="display:none; margin-top:20px;">
+    <h2 id="formTitle">Data Privacy Awareness Survey</h2>
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSe2gk4A4OmEwojAhB4XUJY87tNhKGDZodIaLhv2le-UzOL_BA/viewform?embedded=true" 
+      width="100%" 
+      height="600" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0">
+    </iframe>
+  </div>
+</section>
+  
+
+
+
+ 
+  <script src="script.js"></script>
+
+  
+</body>
+</html>
